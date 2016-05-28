@@ -9,13 +9,13 @@ public class Note {
     private String text;
 
     public Note(String theme, String text) {
-        number = noteCount++;
+        number = ++noteCount;
         this.theme = theme;
         this.text = text;
     }
 
     public Note(String text) {
-        number = noteCount++;
+        number = ++noteCount;
         theme = "NO THEME";
         this.text = text;
     }
@@ -42,5 +42,14 @@ public class Note {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+
+    public void editTheme(String new_theme) {
+        theme = new_theme;
+    }
+
+    public void editText(String new_text) {
+        text = new_text;
     }
 }
