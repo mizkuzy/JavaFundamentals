@@ -24,10 +24,6 @@ public class Note {
         return number;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
     public String getTheme() {
         return theme;
     }
@@ -44,12 +40,4 @@ public class Note {
         this.text = text;
     }
 
-
-    public void editTheme(String new_theme) {
-        theme = new_theme;
-    }
-
-    public void editText(String new_text) {
-        text = new_text;
-    }
 }

@@ -96,7 +96,7 @@ public class Test {
         Note note = notes.get(3);
         String theme = note.getTheme();
         System.out.println("THEME of tested note before editing: " + theme);
-        note.editTheme("New_Theme");
+        note.setTheme("New_Theme");
         System.out.println("THEME of tested note after editing: " + note.getTheme());
         if (theme.equals(note.getTheme())){
             System.out.println("TEST FAILED. Theme was not changed");
@@ -109,7 +109,7 @@ public class Test {
         Note note = notes.get(3);
         String text = note.getText();
         System.out.println("Text of tested note before editing: " + text);
-        note.editText("New_Text");
+        note.setText("New_Text");
         System.out.println("Text of tested note after editing: " + note.getText());
         if (text.equals(note.getText())){
             System.out.println("TEST FAILED. Text was not changed");

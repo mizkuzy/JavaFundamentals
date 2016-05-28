@@ -5,8 +5,7 @@ import java.util.List;
 
 public class NoteBook {
 
-    private static final String DEFAULT_THEME = "NO THEME";
-    private List<Note> notes = new ArrayList<>();
+    private static List<Note> notes = new ArrayList<>();
 
     /**
      * Adds new note with parameter text and default theme.
@@ -38,9 +37,10 @@ public class NoteBook {
      */
     public void deleteNote(String theme) {
         int number = -1;
-        for (Note n : notes) {
-            if (n.getTheme().equals(theme)) {
-                number = n.getNumber() - 1;
+
+        for (int i = 0; i < notes.size(); i++) {
+            if (notes.get(i).getTheme().equals(theme)) {
+                number = i;
                 break;
             }
         }
@@ -49,35 +49,28 @@ public class NoteBook {
         }
     }
 
-    /**
-     * Deletes all notes without theme.
-     */
-    public void deleteNoteWithNoTheme() {
-        ArrayList<Integer> indexes = findNoThemeNotes();
-        for (int i: indexes){
-            notes.remove(i);
+    public void editNote(int number, String theme, String text) {
+        Note note = getNote(number);
+        if (note == null) {
+            System.out.println("Note with this number was not find. ");
+            return;
         }
-
+        if (!(theme.equals(""))) {
+            note.setTheme(theme);
+        }
+        if (!(text.equals(""))) {
+            note.setText(text);
+        }
     }
 
-
-
-    private ArrayList findNoThemeNotes() {
-        ArrayList<Integer> indexes = new ArrayList();
+    private Note getNote(int number) {
         for (Note n : notes) {
-            if (n.getTheme().equals(DEFAULT_THEME)){
-                indexes.add(n.getNumber()-1);
-            }
+            if (n.getNumber() == number) return n;
         }
-
-        return indexes;
+        return null;
     }
 
-    public void editNote() {
-
-    }
-
-    public void showAllNotes() {
+    public static void showAllNotes() {
         System.out.println("Amount of notes: " + notes.size());
         for (Note n : notes) {
             System.out.println(n.getNumber() + ") " + n.getTheme() +
