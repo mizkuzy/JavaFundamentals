@@ -16,6 +16,7 @@ public class Note {
 
     public Note(String text) {
         number = noteCount++;
+        theme = "NO THEME";
         this.text = text;
     }
 

@@ -7,9 +7,24 @@ public class NoteBook {
 
     private List<Note> notes = new ArrayList<>();
 
+    /**
+     * Adds new note with parameter text and default theme.
+     *
+     * @param text of note
+     */
     public void addNote(String text) {
         notes.add(new Note(text));
     }
+
+    /**
+     * Adds new note with parameter text and theme.
+     *
+     * @param text of note
+     */
+    public void addNote(String theme, String text) {
+        notes.add(new Note(text));
+    }
+
 
     public void deleteNote() {
 
