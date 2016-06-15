@@ -1,7 +1,15 @@
 public class Main {
 
     public static void main(String[] args) {
-        MyInterface myInterface = new MyInterface() {
+
+        byte b = -1;
+        int i = 255;
+        byte b1 = (byte) i;
+
+        System.out.println("b=" + b +
+                ", i=" + i +
+                ", b1=" + b1);
+       /* MyInterface myInterface = new MyInterface() {
             @Override
             public int m1() {
                 return 0;
@@ -13,15 +21,15 @@ public class Main {
             }
         };
 
-        /*MyInterface myInterface = new MyInterface() {
+        *//*MyInterface myInterface = new MyInterface() {
             @Override
             public int m1() {
                 return 0;
             }
-        };*/
+        };*//*
         System.out.println(myInterface.m1());
         System.out.println(myInterface.m2(5));
         System.out.println(myInterface.getClass());
-
+*/
     }
 }
